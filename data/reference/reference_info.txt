@@ -1,0 +1,4 @@
+Reference genome: Zea mays Zm-B73-REFERENCE-NAM-5.0 (Ensembl Plants "current" fasta)
+File: Zea_mays.Zm-B73-REFERENCE-NAM-5.0.dna.toplevel.fa.gz
+Download URL: https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/current/fasta/zea_mays/dna/
+Download date: 2026-02-25

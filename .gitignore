@@ -1,0 +1,21 @@
+# Raw data + big reference files
+data/raw_fastq/
+data/reference/maize.fa
+data/reference/maize.fa.*
+data/reference/*.amb
+data/reference/*.ann
+data/reference/*.bwt*
+data/reference/*.pac
+data/reference/*.sa
+
+# Large intermediate outputs
+results/trimmed/
+results/align*/
+results/variants*/
+results/popgen_se/*.bed
+results/popgen_se/*.bim
+results/popgen_se/*.fam
+
+# Misc
+*.tmp
+*.swp
