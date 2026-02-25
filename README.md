@@ -21,3 +21,30 @@ Public NCBI SRA runs used to validate the pipeline:
 - Alignment stats: `results/align_merged/*.flagstat.txt`
 
 > Note: demo runs are small; larger multi-sample WGS datasets can be plugged in for real biological inference.
+
+## Workflow Summary
+
+FASTQ → QC (FastQC/MultiQC) → Alignment (BWA-MEM2) →  
+Variant Calling (bcftools) → SNP Filtering →  
+Population Structure (PLINK PCA)
+
+This pipeline was executed on a Linux HPC environment (12 cores, 128 GB RAM).
+
+
+## Workflow Summary
+
+FASTQ → QC (FastQC/MultiQC) → Alignment (BWA-MEM2) →  
+Variant Calling (bcftools) → SNP Filtering →  
+Population Structure (PLINK PCA)
+
+This pipeline was executed on a Linux HPC environment (12 cores, 128 GB RAM).
+
+
+## Workflow Summary
+
+FASTQ → QC (FastQC/MultiQC) → Alignment (BWA-MEM2) →  
+Variant Calling (bcftools) → SNP Filtering →  
+Population Structure (PLINK PCA)
+
+This pipeline was executed on a Linux HPC environment (12 cores, 128 GB RAM).
+
