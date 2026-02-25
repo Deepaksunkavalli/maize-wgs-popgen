@@ -1,50 +1,70 @@
-# Maize WGS → Variant Calling → Population Genomics (HPC Demo)
+# Maize Whole Genome Sequencing (WGS) → Population Genomics Pipeline
 
-End-to-end Linux/HPC workflow:
-- QC: FastQC (+ MultiQC)
-- Trimming: fastp
-- Alignment: BWA-MEM2
-- Variant calling: bcftools (mpileup/call/norm)
-- PopGen: SNP filtering + PCA (PLINK)
+This repository demonstrates a reproducible Linux/HPC workflow for maize (Zea mays) whole genome sequencing analysis, including variant discovery and population structure assessment.
 
-## Reference
-Zea mays Zm-B73-REFERENCE-NAM-5.0 (Ensembl Plants). See `data/reference/reference_info.txt`.
+---
 
-## Demo Data
-Public NCBI SRA runs used to validate the pipeline:
-- SRR13040214
-- SRR13040215
+## Workflow Summary
 
-## Key outputs
+FASTQ  
+→ Quality Control (FastQC + MultiQC)  
+→ Alignment to reference genome (BWA-MEM2)  
+→ Variant Calling (bcftools mpileup + call + norm)  
+→ SNP Filtering (biallelic + depth filter)  
+→ Population Structure Analysis (PLINK PCA)
+
+Pipeline executed on Linux HPC:
+- 12 CPU cores
+- 128 GB RAM
+- Interactive OnDemand desktop session
+
+---
+
+## Reference Genome
+
+Zea mays: Zm-B73-REFERENCE-NAM-5.0  
+Source: Ensembl Plants  
+(See `data/reference/reference_info.txt`)
+
+---
+
+## Demo Dataset
+
+Public NCBI SRA runs used for pipeline validation:
+- SRR13040214  
+- SRR13040215  
+
+Note: These are small demo runs to validate workflow architecture.  
+The pipeline is scalable to larger multi-sample WGS datasets.
+
+---
+
+## Key Outputs
+
 - PCA plot: `results/popgen_se/pca_plot.png`
 - PCA eigenvectors: `results/popgen_se/pca.eigenvec`
-- Alignment stats: `results/align_merged/*.flagstat.txt`
+- Alignment statistics: `results/align_merged/*.flagstat.txt`
+- QC summary: `results/qc/multiqc_report.html`
 
-> Note: demo runs are small; larger multi-sample WGS datasets can be plugged in for real biological inference.
+---
 
-## Workflow Summary
+## Tools Used
 
-FASTQ → QC (FastQC/MultiQC) → Alignment (BWA-MEM2) →  
-Variant Calling (bcftools) → SNP Filtering →  
-Population Structure (PLINK PCA)
+- FastQC
+- MultiQC
+- fastp
+- BWA-MEM2
+- samtools
+- bcftools
+- PLINK
+- Python (pandas, matplotlib)
 
-This pipeline was executed on a Linux HPC environment (12 cores, 128 GB RAM).
+---
 
+## Future Extensions
 
-## Workflow Summary
-
-FASTQ → QC (FastQC/MultiQC) → Alignment (BWA-MEM2) →  
-Variant Calling (bcftools) → SNP Filtering →  
-Population Structure (PLINK PCA)
-
-This pipeline was executed on a Linux HPC environment (12 cores, 128 GB RAM).
-
-
-## Workflow Summary
-
-FASTQ → QC (FastQC/MultiQC) → Alignment (BWA-MEM2) →  
-Variant Calling (bcftools) → SNP Filtering →  
-Population Structure (PLINK PCA)
-
-This pipeline was executed on a Linux HPC environment (12 cores, 128 GB RAM).
-
+- Fst calculation
+- Nucleotide diversity (π)
+- GWAS integration
+- Snakemake workflow automation
+- Multi-sample population structure scaling
